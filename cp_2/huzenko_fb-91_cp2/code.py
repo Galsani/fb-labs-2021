@@ -1,8 +1,7 @@
-#!/usr/bin/env python
+﻿#!/usr/bin/env python
 # coding: utf-8
 
 # In[5]:
-
 
 import collections
 import numpy
@@ -95,10 +94,22 @@ def task1():#OK
     for i in keys:
         print(ind_vid(encode(task_text, i)))  
 
-find_key_length(text)
-find_key(text, 14)
-#print(decode(text,'экомаятникфуко'))
-task1()
+#find_key_length(text)
+#find_key(text, 14)
+#task1()
+#знаходження частот для блоків, де найчастіша буква не "о"
+d = to_bloks(encode(text,'экомаятникфуко'), 14)
+
+
+temp = collections.Counter(d[2]).most_common(1)[0]
+temp1 = collections.Counter(d[6]).most_common(1)[0]
+temp2 = collections.Counter(d[13]).most_common(1)[0]
+print(temp, temp1, temp2)
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
@@ -109,11 +120,6 @@ task1()
 
 # In[ ]:
 
-
-
-
-
-# In[ ]:
 
 
 
