@@ -63,7 +63,7 @@ def bigram(text):#возвращает 5 самых популярных биг�
         bigram.append(text[j] + text[j + 1])
     #bigramcount = dict(Counter(bigram))  # проверка правильности подсчёта биграм
     #print(bigramcount)
-    temp = Counter(bigram).most_common(6) #самые популярные биграммы
+    temp = Counter(bigram).most_common(5) #самые популярные биграммы
     temp=[temp[0][0],temp[1][0],temp[2][0],temp[3][0],temp[4][0]]
     #print(temp)
     return temp
@@ -92,8 +92,8 @@ def decrypt(a,b,text):#работает ок
         Plain_text = Plain_text+alphabet[x1] + alphabet[x2]
         i += 2
     return Plain_text
-#######################################################################################
-def all_possible(bigrams):#пересмотреть
+
+def all_possible(bigrams):#ОК
     rus_bigrams = ['ст', 'но', 'то', 'на', 'ен']
     #print(bigrams, rus_bigrams)
     combinations = []
@@ -136,7 +136,7 @@ def keys(bigrams):#работает ок
     all_keys = remove(all_keys)
     return all_keys
 
-def true_keys(keys,text):#ищу ключи от шифротекста
+def true_keys(keys,text):#ищу ключи от шифротекста ОК
     most = []
     for i in keys:
        # print(i,i[0],i[1])
